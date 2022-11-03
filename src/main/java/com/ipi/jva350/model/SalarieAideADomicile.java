@@ -20,13 +20,14 @@ public class SalarieAideADomicile {
 
     private String nom;
 
-    public static List<DayOfWeek> joursHabituellementTravailles = new ArrayList<DayOfWeek>() {{
-        add(DayOfWeek.MONDAY);
-        add(DayOfWeek.TUESDAY);
-        add(DayOfWeek.WEDNESDAY);
-        add(DayOfWeek.THURSDAY);
-        add(DayOfWeek.FRIDAY);
-    }};
+    public static List<DayOfWeek> joursHabituellementTravailles = new ArrayList<DayOfWeek>() ;
+    static {
+    	joursHabituellementTravailles.add(DayOfWeek.MONDAY);
+    	joursHabituellementTravailles.add(DayOfWeek.TUESDAY);
+    	joursHabituellementTravailles.add(DayOfWeek.WEDNESDAY);
+    	joursHabituellementTravailles.add(DayOfWeek.THURSDAY);
+    	joursHabituellementTravailles.add(DayOfWeek.FRIDAY);
+    };
     private LocalDate moisEnCours;
     private LocalDate moisDebutContrat;
 
@@ -44,7 +45,12 @@ public class SalarieAideADomicile {
     public SalarieAideADomicile() {
     }
 
-    public SalarieAideADomicile(String nom, LocalDate moisDebutContrat, LocalDate moisEnCours,
+    private static void add(DayOfWeek monday) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public SalarieAideADomicile(String nom, LocalDate moisDebutContrat, LocalDate moisEnCours,
                                 //LinkedHashSet<LocalDate> congesPayesPris,
                                 double joursTravaillesAnneeN, double congesPayesAcquisAnneeN,
                                 double joursTravaillesAnneeNMoins1, double congesPayesAcquisAnneeNMoins1, double congesPayesPrisAnneeNMoins1) {
