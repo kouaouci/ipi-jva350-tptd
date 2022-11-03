@@ -45,11 +45,6 @@ public class SalarieAideADomicile {
     public SalarieAideADomicile() {
     }
 
-    private static void add(DayOfWeek monday) {
-		// TODO Auto-generated method stub
-		
-	}
-
 	public SalarieAideADomicile(String nom, LocalDate moisDebutContrat, LocalDate moisEnCours,
                                 //LinkedHashSet<LocalDate> congesPayesPris,
                                 double joursTravaillesAnneeN, double congesPayesAcquisAnneeN,
