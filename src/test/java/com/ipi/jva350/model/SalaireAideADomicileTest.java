@@ -183,10 +183,10 @@ public class SalaireAideADomicileTest {
     		 })
     
      
-     void testCalculJoursCongesDecomptesPourPlage(String debut, String fin, double exectedNbJoursDeCongeDeComptes, Object expectedNbJourDeCongeDecomptes) {
+     void testCalculJoursCongesDecomptesPourPlage(String debut, String fin, double exectedNbJoursDeCongeDeComptes) {
     	  //given
     	  SalarieAideADomicile aide = new SalarieAideADomicile("jeanne", LocalDate.of(2021, 07, 01), LocalDate.now(), 0,
-   				0, 9, 1, 0);
+   				0, 10, 1, 0);
     	  //when
     	 // LinkedHashSet<LocalDate> res = aide.calculeJoursDeCongeDecomptesPourPlage(
                   //LocalDate.of(2022,7,1), LocalDate.of(2022,7,27));
