@@ -66,12 +66,12 @@ public class SalarieAideADomicile {
 	 * et/ou paiement – l'aide ménagère doit avoir travaillé pour le particulier
 	 * employeur : pendant au moins dix jours (pas forcément de suite) ; à
 	 * l'intérieur d'une période de temps – dite de « référence » – allant du 1er
-	 * juin de l'année N au 31 mai de l'année N + 1.
+	 * juin de l'année N au 31 mai de l'année N - 1.
 	 * 
 	 * @return
 	 */
 	public boolean aLegalementDroitADesCongesPayes() {
-		return this.getJoursTravaillesAnneeNMoins1() > 10;
+		return this.getJoursTravaillesAnneeNMoins1() >= 10;
 	}
 
 	/**
