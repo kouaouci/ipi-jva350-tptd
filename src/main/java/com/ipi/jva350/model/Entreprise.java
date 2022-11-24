@@ -111,20 +111,31 @@ public final class Entreprise {
                 : LocalDate.of(d.getYear() - 1, 6, 1);
     }
 
-    public static boolean estJourFerie(LocalDate jour) {
+  /*  public static boolean estJourFerie(LocalDate jour) {
         int monEntier = (int) Entreprise.joursFeries(jour).stream().filter(d ->
                 d.equals(jour)).count();
         int test = bissextile(jour.getYear()) ? 1 : 0;
         if (test != 0 && !(monEntier > 1)) {
             test--;
         }
-        return monEntier != test;
+        return monEntier != test;}*/
+    
+    public static boolean estJourFerie(LocalDate jour) {
+        return Entreprise.joursFeries(jour).stream().filter(d ->
+                d.equals(jour)).count() > 0;
     }
+    
     public static boolean estDansPlage(LocalDate d, LocalDate debut, LocalDate fin) {
+    	
         // à implémenter en TDD !
+    	 if (d.isAfter(fin) || d.isBefore(debut)) {
+             return false;
+         }else
+         return true;
+     }
   
-        throw new RuntimeException("à implémenter en TDD !");
+     
     }
         
-    }
+    
 
