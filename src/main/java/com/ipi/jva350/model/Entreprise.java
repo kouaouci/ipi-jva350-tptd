@@ -1,9 +1,11 @@
 package com.ipi.jva350.model;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
 
 import java.time.LocalDate;
 import java.util.*;
+
+import org.hibernate.bytecode.spi.NotInstrumentedException;
 
 public final class Entreprise {
 
@@ -84,44 +86,22 @@ public final class Entreprise {
         }
         return false;
     }
+    // proportion selon l'avancement dans l'année, pondérée avec plus de pods plus gros sur juillet et Aout (20 vs 8) :
+    //"ça veut dire chaque mois compte plus que le précédent, dans une année de travail donc décalé de 6 mois"
 
     public static double proportionPondereeDuMois(LocalDate moisDuConge) {
         int proportionPonderee = 8;
         int mois = 1 + (moisDuConge.getMonthValue() + 6) % 12;
-        if (mois >= 2) {
+        for(int i=1; i<=mois; i++) {
+        if (mois == 2 || mois==3) {
             proportionPonderee += 20;
+        } else {
+        	proportionPonderee+=8;
         }
-        if (mois >= 3) {
-            proportionPonderee += 20;
+        	
         }
-        if (mois >= 4) {
-            proportionPonderee += 8;
-        }
-        if (mois >= 5) {
-            proportionPonderee += 8;
-        }
-        if (mois >= 6) {
-            proportionPonderee += 8;
-        }
-        if (mois >= 7) {
-            proportionPonderee += 8;
-        }
-        if (mois >= 8) {
-            proportionPonderee += 8;
-        }
-        if (mois >= 9) {
-            proportionPonderee += 8;
-        }
-        if (mois >= 10) {
-            proportionPonderee += 8;
-        }
-        if (mois >= 11) {
-            proportionPonderee += 8;
-        }
-        if (mois >= 12) {
-            proportionPonderee += 8;
-        }
-        return proportionPonderee / 12d / 10d;
+       
+        return proportionPonderee / 12d;
     }
 
 
@@ -140,10 +120,11 @@ public final class Entreprise {
         }
         return monEntier != test;
     }
-
     public static boolean estDansPlage(LocalDate d, LocalDate debut, LocalDate fin) {
         // à implémenter en TDD !
-        throw new NotImplementedException();
+  
+        throw new RuntimeException("à implémenter en TDD !");
+    }
+        
     }
 
-}
