@@ -188,22 +188,15 @@ public class SalaireAideADomicileTest {
     	  SalarieAideADomicile aide = new SalarieAideADomicile("jeanne", LocalDate.of(2021, 07, 01), LocalDate.now(), 0,
    				0, 10, 1, 0);
     	  //when
-    	 // LinkedHashSet<LocalDate> res = aide.calculeJoursDeCongeDecomptesPourPlage(
-                  //LocalDate.of(2022,7,1), LocalDate.of(2022,7,27));
+
     	  LinkedHashSet<LocalDate> res = aide.calculeJoursDeCongeDecomptesPourPlage(
                   LocalDate.parse(debut), LocalDate.parse(fin));
 
-    	  
-    	  /* then
-    	  LinkedHashSet<LocalDate>expected =  new LinkedHashSet<>();
-          expected.add(LocalDate.of(2022,7,11));
-          Assertions.assertEquals(expected,res);
-    	// Assertions.assertEquals(expectedNbJourDeCongeDeComptes,res.size(), null);
+    
           //Then*/
     	  Assertions.assertEquals(exectedNbJoursDeCongeDeComptes, res.size());
           
-         /*LinkedHashSet<LocalDate> res =aide.calculeJoursDeCongeDecomptesPourPlage(LocalDate(debut),LocalDate(fin) );
-          Assertions.assertEquals(expectedNbJourDeCongeDecomptes, res.size());*/
+         
      }
      @ParameterizedTest(name = "Entre {0} et {1}, nombre de JoursDeCongeDecomptes devrait être {2}")
      @CsvSource({
