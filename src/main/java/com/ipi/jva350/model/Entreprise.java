@@ -11,7 +11,7 @@ public final class Entreprise {
 
 	private static final Map<Integer, LocalDate> datePaque = new HashMap<>();
 
-	private Entreprise() {
+	public Entreprise() {
 
 	}
 
@@ -106,7 +106,7 @@ public final class Entreprise {
 
 		}
 
-		return proportionPonderee / 12d;
+		return proportionPonderee / 12d / 10d;
 	}
 
 	public static LocalDate getPremierJourAnneeDeConges(LocalDate d) {
