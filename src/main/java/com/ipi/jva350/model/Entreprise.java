@@ -5,7 +5,7 @@ import java.util.*;
 
 import org.hibernate.bytecode.spi.NotInstrumentedException;
 
-import com.ipi.jva350.exception.EntrepriseException;
+
 
 public final class Entreprise {
 
@@ -137,22 +137,20 @@ public final class Entreprise {
 	 * @return
 	 */
 
-	public static boolean estDansPlage(LocalDate d, LocalDate debut, LocalDate fin) throws EntrepriseException {
+	public static boolean estDansPlage(LocalDate d, LocalDate debut, LocalDate fin) {
 
-		// à implémenter en TDD !
-		if (fin.isBefore(debut)) {
-			throw new EntrepriseException("La date de debut est superieur àla date de fin");
-		}
 		if (d.isBefore(debut) || d.isAfter(fin)) {
 			return false;
 		} else if (d.compareTo(debut) >= 0 && d.compareTo(fin) <= 0) {
 
 			return true;
 
-		} else {
+		}  
+			else {
+		}
 			return false;
 		}
 
-	}
+	
 
 }
