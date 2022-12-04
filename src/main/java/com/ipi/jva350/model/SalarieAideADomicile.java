@@ -26,7 +26,7 @@ public class SalarieAideADomicile {
 		joursHabituellementTravailles.add(DayOfWeek.WEDNESDAY);
 		joursHabituellementTravailles.add(DayOfWeek.THURSDAY);
 		joursHabituellementTravailles.add(DayOfWeek.FRIDAY);
-	};
+	}
 	private LocalDate moisEnCours;
 	private LocalDate moisDebutContrat;
 
