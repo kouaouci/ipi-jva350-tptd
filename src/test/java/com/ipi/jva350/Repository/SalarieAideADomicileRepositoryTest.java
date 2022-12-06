@@ -1,4 +1,4 @@
-package com.ipi.jva350.Repository;
+package com.ipi.jva350.repository;
 
 import java.time.LocalDate;
 
